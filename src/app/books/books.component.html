@@ -1,0 +1,14 @@
+<div *ngIf="bookService.dialog.spin" class="d-flex justify-content-center m-0">
+  <div class="spinner-border text-info m-1" role="status"></div>
+  <strong class="sr-only text-info pt-2">&nbsp; Loading...</strong>
+</div>
+<div *ngIf="!bookService.dialog.spin">
+  <app-book-modal></app-book-modal>
+  <div class="container">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div *ngFor="let book of bookService.filteredBook">
+        <app-book-item [book]="book"></app-book-item>
+      </div>
+    </div>
+  </div>
+</div>

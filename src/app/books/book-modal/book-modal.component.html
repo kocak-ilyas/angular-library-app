@@ -1,0 +1,60 @@
+<div class="flex">
+  <div class="row justify-content-between">
+    <div class="col-5 pl-2">
+      <h4 class="me-md-2 p-1 text-center">Book List</h4>
+    </div>
+    <div class="col-3">
+      <button type="button" class="btn btn-primary me-md-2 m-1 p-1 btn-book" data-bs-toggle="modal"
+        data-bs-target="#bookModal" data-bs-whatever="@getbootstrap">
+        Add Book
+      </button>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookModalLabel">Add new Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="bookForm">
+          <div class="mb-1">
+            <label for="title" class="col-form-label">Title: ***required</label>
+            <input type="text" class="form-control" id="title" formControlName="title" />
+          </div>
+          <div class="mb-1">
+            <label for="author" class="col-form-label">Author: ***required</label>
+            <input type="text" class="form-control" id="author" formControlName="author" />
+          </div>
+          <div class="mb-1">
+            <label for="publisher" class="col-form-label">Publisher:</label>
+            <input type="text" class="form-control" id="publisher" formControlName="publisher" />
+          </div>
+          <div class="mb-1">
+            <label for="book_image" class="col-form-label">Book image url:</label>
+            <input class="form-control" id="book_image" formControlName="book_image" />
+          </div>
+          <div class="mb-1">
+            <label for="amazon_product_url" class="col-form-label">Product url:</label>
+            <input class="form-control" id="amazon_product_url" formControlName="amazon_product_url" />
+          </div>
+          <div class="mb-1">
+            <label for="description" class="col-form-label">Description:</label>
+            <textarea type="text" class="form-control" id="description" formControlName="description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="bookForm.invalid"
+          (click)="bookService.postBook(bookForm.value)">
+          Save Book
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

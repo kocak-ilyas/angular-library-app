@@ -1,0 +1,33 @@
+.badge-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+}
+.address {
+  font-size: 0.6rem;
+  line-height: 1;
+  height: 19px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filter-badge {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  height: 15px;
+}
+
+.book-text {
+  font-size: 0.6rem;
+  height: 15px;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-button {
+  width: 50px;
+  margin: 6px;
+  font-size: 0.7rem;
+}
